@@ -6,7 +6,12 @@ import { Component } from '@angular/core';
 })
 
 export class VideogameComponent{
+    public title: string;
+    public list: string;
+
     constructor(){
+        this.title = 'Videogames component';
+        this.list = 'Most popular videogames'
         console.log('Your component videogame.component is loaded');
     }
 }
