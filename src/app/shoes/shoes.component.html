@@ -1,6 +1,9 @@
 <h2>{{ ShoesTitle }}</h2>
 <h4> {{ ShoesList }} </h4>
 <ul>
-    <li *ngFor='let Shoe of Shoes'>{{Shoe.name}} - <strong>{{Shoe.price}}</strong></li>
+    <li *ngFor='let Shoe of Shoes'>
+        {{Shoe.name}} - <strong>{{Shoe.price}} mxn. </strong>
+        <span *ngIf = 'Shoe.price  <=1800'>Special Price!!!</span>
+    </li>
     
 </ul>   
