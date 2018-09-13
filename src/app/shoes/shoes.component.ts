@@ -12,13 +12,14 @@ export class ShoesComponent implements OnInit{
     public Shoes: Array<Shoe>;
     public ShoesBrands: string[];
     public color: string;
+    public myBrand: string;
 
     constructor(){
-        this.color = 'Black';
+        this.color = 'black';
         this.ShoesBrands = new Array();
         this.Shoes = [
             new Shoe('AirMG0812', 'Nike', 2500, 'Red', true),
-            new Shoe('Runner', 'Adidas', 1500, 'White', true),
+            new Shoe('Runner', 'Adidas', 1500, 'Green', true),
             new Shoe('Air Confort', 'New Balance', 2200, 'Blue', false),
             new Shoe('Converse', 'Converse', 1800, 'Black', true),
             new Shoe('Vanta Black', 'Vanta', 1600, 'Black', false),
@@ -42,6 +43,14 @@ export class ShoesComponent implements OnInit{
         });
 
         console.log(this.ShoesBrands);
+    }
+
+    getBrand(){
+        alert(this.myBrand);
+    }
+
+    addBrand(){
+        this.ShoesBrands.push(this.myBrand);
     }
 
     /*

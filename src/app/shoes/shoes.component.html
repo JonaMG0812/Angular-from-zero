@@ -1,5 +1,11 @@
 <h2>{{ ShoesTitle }}</h2>
 
+<h4>Add New Brand</h4>
+<input type="text" [(ngModel)]="myBrand" />
+<button (click)='getBrand()'>Get your Brand</button>
+<button (click)='addBrand()'>Add your Brand</button>
+<p><strong>{{ myBrand }}</strong></p>
+
 <h4>Only the best brands!</h4>
 <ul>
     <li *ngFor="let Brand of ShoesBrands">
@@ -20,20 +26,22 @@
 </ul>
 
 <h4>The most usual shoes's color is:</h4>
+<input type="text" [(ngModel)]='color'>
+<p>Available colors: Red, Green, Blue, Black and Brown, try it!</p>
 <ul [ngSwitch]='color'>
-    <li *ngSwitchCase="'Red'">
+    <li *ngSwitchCase="'red'">
         The most popular color is <span style="background:red;color:white;"> Red </span>
     </li>
-    <li *ngSwitchCase="'White'">
-        The most popular color is <span style="background:white;"> White </span>
+    <li *ngSwitchCase="'green'">
+        The most popular color is <span style="background:green;"> Green </span>
     </li>
-    <li *ngSwitchCase="'Blue'">
+    <li *ngSwitchCase="'blue'">
         The most popular color is <span style="background:blue;color:white;"> Blue </span>
     </li>
-    <li *ngSwitchCase="'Black'">
+    <li *ngSwitchCase="'black'">
         The most popular color is <span style="background:black;color:white;"> Black </span>
     </li>
-    <li *ngSwitchCase="'Brown'">
+    <li *ngSwitchCase="'brown'">
         The most popular color is <span style="background:brown;color:white;"> Brown </span>
     </li>
 </ul>
