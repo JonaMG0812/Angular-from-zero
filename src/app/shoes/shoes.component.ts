@@ -53,6 +53,15 @@ export class ShoesComponent implements OnInit{
         this.ShoesBrands.push(this.myBrand);
     }
 
+    delBrand(index){
+        //delete this.ShoesBrands[index];
+        this.ShoesBrands.splice(index, 1);
+    }
+
+    showBrand(){
+        alert(this.myBrand);
+    }
+
     /*
     constructor(){
         this.ShoesTitle = 'Videogames component';

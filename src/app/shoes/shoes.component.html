@@ -1,7 +1,7 @@
 <h2>{{ ShoesTitle }}</h2>
 
 <h4>Add New Brand</h4>
-<input type="text" [(ngModel)]="myBrand" />
+<input type="text" [(ngModel)]="myBrand" (keyup.enter)='showBrand()'/>
 <button (click)='getBrand()'>Get your Brand</button>
 <button (click)='addBrand()'>Add your Brand</button>
 <p><strong>{{ myBrand }}</strong></p>
@@ -9,7 +9,7 @@
 <h4>Only the best brands!</h4>
 <ul>
     <li *ngFor="let Brand of ShoesBrands">
-        {{ Brand }}</li>
+        {{ Brand }} <button (click)='delBrand(index)'>Delete Brand</button></li>
 </ul>
 
 <h4> {{ ShoesList }} available</h4>
