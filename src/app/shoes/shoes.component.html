@@ -1,9 +1,20 @@
 <h2>{{ ShoesTitle }}</h2>
-<h4> {{ ShoesList }} </h4>
+
+<h4>Only the best brands!</h4>
+<ul>
+    <li *ngFor="let Brand of ShoesBrands">
+        {{ Brand }}</li>
+</ul>
+
+<h4> {{ ShoesList }} available</h4>
 <ul>
     <li *ngFor='let Shoe of Shoes'>
-        {{Shoe.name}} - <strong>{{Shoe.price}} mxn. </strong>
-        <span *ngIf = 'Shoe.price  <=1800'>Special Price!!!</span>
+        <span [ngStyle]="{
+            'text-decoration': !Shoe.stock ? 'line-through' : 'none'
+        }">
+            {{Shoe.name}} - <strong>{{Shoe.price}} mxn.</strong>
+        </span>
+        
+        <span *ngIf = 'Shoe.price <= 1800'>Special Price!!!</span>
     </li>
-    
-</ul>   
+</ul>

@@ -10,9 +10,12 @@ export class ShoesComponent implements OnInit{
     public ShoesTitle: string = 'Shoes Component';
     public ShoesList: string = 'Most popular shoes';
     public Shoes: Array<Shoe>;
-    public ShoeBrands: string[];
+    public ShoesBrands: string[];
+    public color: string;
 
     constructor(){
+        this.color = 'Blue';
+        this.ShoesBrands = new Array();
         this.Shoes = [
             new Shoe('AirMG0812', 'Nike', 2500, 'Red', true),
             new Shoe('Runner', 'Adidas', 1500, 'White', true),
@@ -25,12 +28,20 @@ export class ShoesComponent implements OnInit{
 
     ngOnInit(){
         console.log(this.Shoes);
+        this.getBrands();
+        
     }
 
-    ShoeBrands(){
+    getBrands(){
         this.Shoes.forEach((shoe, index) => {
-            ShoeBrands.push(shoe.brand);
+            /*Deleting elements duplicate */
+            if(this.ShoesBrands.indexOf(shoe.brand) < 0){
+                this.ShoesBrands.push(shoe.brand);
+            }
+            //console.log(index);
         });
+
+        console.log(this.ShoesBrands);
     }
 
     /*
@@ -40,7 +51,4 @@ export class ShoesComponent implements OnInit{
         console.log('Your component shoes.component is loaded');
     }
     */
-
-    
-
 }
