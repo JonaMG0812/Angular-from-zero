@@ -14,7 +14,7 @@ export class ShoesComponent implements OnInit{
     public color: string;
 
     constructor(){
-        this.color = 'Blue';
+        this.color = 'Black';
         this.ShoesBrands = new Array();
         this.Shoes = [
             new Shoe('AirMG0812', 'Nike', 2500, 'Red', true),

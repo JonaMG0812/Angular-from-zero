@@ -14,7 +14,26 @@
         }">
             {{Shoe.name}} - <strong>{{Shoe.price}} mxn.</strong>
         </span>
-        
+
         <span *ngIf = 'Shoe.price <= 1800'>Special Price!!!</span>
+    </li>
+</ul>
+
+<h4>The most usual shoes's color is:</h4>
+<ul [ngSwitch]='color'>
+    <li *ngSwitchCase="'Red'">
+        The most popular color is <span style="background:red;color:white;"> Red </span>
+    </li>
+    <li *ngSwitchCase="'White'">
+        The most popular color is <span style="background:white;"> White </span>
+    </li>
+    <li *ngSwitchCase="'Blue'">
+        The most popular color is <span style="background:blue;color:white;"> Blue </span>
+    </li>
+    <li *ngSwitchCase="'Black'">
+        The most popular color is <span style="background:black;color:white;"> Black </span>
+    </li>
+    <li *ngSwitchCase="'Brown'">
+        The most popular color is <span style="background:brown;color:white;"> Brown </span>
     </li>
 </ul>
