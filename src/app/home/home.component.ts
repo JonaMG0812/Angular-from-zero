@@ -6,10 +6,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  public login: boolean;
 
-  constructor() { }
+  constructor() {
+    this.login = false;
+   }
 
   ngOnInit() {
+  }
+
+  setLog(){
+    this.login = true;
+  }
+
+  unsetLog(){
+    this.login =  false;
   }
 
 }
