@@ -1,3 +1,5 @@
-<p>
-  external works!
-</p>
+<div *ngIf="user">
+  <p>User loaded from https://reqres.in/</p><br>
+  <img src="{{user.avatar}}" style="border-radius: 50%; "/>
+  <h3>{{user.first_name + ' ' + user.last_name }}</h3>
+</div>
