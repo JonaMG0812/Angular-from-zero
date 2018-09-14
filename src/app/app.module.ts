@@ -8,6 +8,7 @@ import { VideogameComponent } from './videogame/videogame.component';
 import { ShoesComponent} from './shoes/shoes.component';
 import { CoursesComponent } from './courses/courses.component';
 import { HomeComponent } from './home/home.component';
+import { ExternalComponent } from './external/external.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { HomeComponent } from './home/home.component';
     VideogameComponent,
     ShoesComponent,
     CoursesComponent,
-    HomeComponent
+    HomeComponent,
+    ExternalComponent
   ],
   imports: [
     BrowserModule,

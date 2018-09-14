@@ -1,9 +1,11 @@
 import {Component, OnInit} from '@angular/core';
 import { Shoe } from '../Models/shoe';
+import { ShoeService } from '../services/shoes.service';
 
 @Component({
     selector: 'shoes',
-    templateUrl: './shoes.component.html'
+    templateUrl: './shoes.component.html',
+    providers: [ShoeService]
 })
 
 export class ShoesComponent implements OnInit{
@@ -14,21 +16,16 @@ export class ShoesComponent implements OnInit{
     public color: string;
     public myBrand: string;
 
-    constructor(){
+    constructor(
+        private _shoeService: ShoeService
+    ){
         this.color = 'black';
         this.ShoesBrands = new Array();
-        this.Shoes = [
-            new Shoe('AirMG0812', 'Nike', 2500, 'Red', true),
-            new Shoe('Runner', 'Adidas', 1500, 'Green', true),
-            new Shoe('Air Confort', 'New Balance', 2200, 'Blue', false),
-            new Shoe('Converse', 'Converse', 1800, 'Black', true),
-            new Shoe('Vanta Black', 'Vanta', 1600, 'Black', false),
-            new Shoe('Air Max', 'Nike', 1200, 'Brown', false)
-        ];
     }
 
     ngOnInit(){
-        console.log(this.Shoes);
+        this.Shoes = this._shoeService.getShoe();
+        //alert(this._shoeService.getText());
         this.getBrands();
         
     }
@@ -61,12 +58,4 @@ export class ShoesComponent implements OnInit{
     showBrand(){
         alert(this.myBrand);
     }
-
-    /*
-    constructor(){
-        this.ShoesTitle = 'Videogames component';
-        this.ShoesList = 'Most popular videogames'
-        console.log('Your component shoes.component is loaded');
-    }
-    */
 }
