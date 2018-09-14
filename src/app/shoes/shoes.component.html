@@ -18,7 +18,8 @@
         <span [ngStyle]="{
             'text-decoration': !Shoe.stock ? 'line-through' : 'none'
         }">
-            {{Shoe.name}} - <strong>{{Shoe.price}} mxn.</strong>
+            {{Shoe.name}} - 
+            <strong [class.highPrice]='Shoe.price >= 1800'>{{Shoe.price}} mxn.</strong>
         </span>
 
         <span *ngIf = 'Shoe.price <= 1800'>Special Price!!!</span>
