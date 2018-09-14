@@ -11,6 +11,7 @@ import { CoursesComponent } from './courses/courses.component';
 //Config routes array
 const appRoutes: Routes = [
     {path: '', component: HomeComponent},
+    {path: 'home', component: HomeComponent},
     {path: 'shoes', component: ShoesComponent},
     {path: 'videogames', component: VideogameComponent},
     {path: 'courses', component: CoursesComponent},

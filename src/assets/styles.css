@@ -2,3 +2,7 @@
     color: red;
     font-size: 18px;
 }
+
+.active{
+    border: 3px solid purple;
+}
