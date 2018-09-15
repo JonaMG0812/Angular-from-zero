@@ -10,6 +10,7 @@ import { PetitionsService } from '../services/petitions.service';
 export class ExternalComponent implements OnInit {
 
   public user: any;
+  public mydate: any;
 
   constructor(
     private _petitionsService: PetitionsService
@@ -18,6 +19,9 @@ export class ExternalComponent implements OnInit {
    }
 
   ngOnInit() {
+    this.mydate = new Date();
+
+
     this._petitionsService.getUser().subscribe(
       result =>{
         this.user =  result.data;
