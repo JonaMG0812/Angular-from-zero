@@ -3,11 +3,12 @@ import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 //Importing components
-import { HomeComponent } from './home/home.component'
+import { HomeComponent } from './home/home.component';
 import { ShoesComponent } from './shoes/shoes.component';
 import { VideogameComponent } from './videogame/videogame.component';
 import { CoursesComponent } from './courses/courses.component';
-import { ExternalComponent } from './external/external.component'
+import { ContactComponent } from './contact/contact.component';
+import { ExternalComponent } from './external/external.component';
 
 //Config routes array
 const appRoutes: Routes = [
@@ -17,6 +18,7 @@ const appRoutes: Routes = [
     {path: 'videogames', component: VideogameComponent},
     {path: 'courses', component: CoursesComponent},
     {path: 'external', component: ExternalComponent},
+    {path: 'contact', component: ContactComponent},
     {path: '**', component: HomeComponent}
 ];
 

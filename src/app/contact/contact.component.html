@@ -1,3 +1,27 @@
-<p>
-  contact works!
-</p>
+<h2>Contact</h2>
+
+<form #formContact = 'ngForm' (ngSubmit)='onSubmit(formContact)'>
+  <label for="name">Name</label>&nbsp;
+  <input type="text" name="name" #name='ngModel' [(ngModel)]="user.name" required pattern="[a-zA-Z]+"/>&nbsp;
+  <span *ngIf="name.touched && !name.valid">Field required</span>
+  <br><br>
+
+  <label for="lastname">Last Name</label>&nbsp;
+  <input type="text" name="lastname" #lastname='ngModel' [(ngModel)]="user.lastname" required pattern="[a-zA-Z]+"/>&nbsp;
+  <span *ngIf="lastname.touched && !lastname.valid">Field required</span>
+  <br><br>
+
+  <label for="email">Email</label>&nbsp;
+  <input type="email" name="email" #email='ngModel' [(ngModel)]="user.email" required/>
+  <span *ngIf="email.touched && !email.valid">Field required</span>
+  <br><br>
+
+  <label for="msg">Message</label><br>
+  <textarea name="msg" id="" cols="30" rows="10" #msg='ngModel' [(ngModel)]="user.msg" required></textarea>&nbsp;
+  <span *ngIf="msg.touched && !msg.valid">Field required</span>
+  <br>
+
+  <input type="submit" value="Send" [disabled]="!formContact.form.valid">
+</form>
+
+
