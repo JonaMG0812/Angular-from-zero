@@ -10,6 +10,7 @@ import { ShoesComponent} from './shoes/shoes.component';
 import { CoursesComponent } from './courses/courses.component';
 import { HomeComponent } from './home/home.component';
 import { ExternalComponent } from './external/external.component';
+import { ContactComponent } from './contact/contact.component';
 
 import { CalculatorPipe } from './pipes/calculator.pipe';
 
@@ -21,7 +22,8 @@ import { CalculatorPipe } from './pipes/calculator.pipe';
     CoursesComponent,
     HomeComponent,
     ExternalComponent,
-    CalculatorPipe
+    CalculatorPipe,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
