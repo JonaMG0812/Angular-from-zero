@@ -2,7 +2,32 @@
 <p>{{ 4 | calculator: 2}}</p>
 
 <div *ngIf="user">
+  <h2>GET Method</h2>
   <p>User loaded from https://reqres.in/</p><br>
   <img src="{{user.avatar}}" style="border-radius: 50%; "/>
   <h3>{{user.first_name + ' ' + user.last_name }}</h3>
+</div>
+
+<hr>
+
+<h2>POST Method</h2>
+<p>Creating new user in https://reqres.in/</p>
+<form action="" #newUser="ngForm" (ngSubmit)="onSubmit(newUser)">
+  <p>
+    <label for="name">Name</label>&nbsp;
+    <input type="text" name="name" #name="ngModel" [(ngModel)]="new_user.name" required pattern="[a-zA-Z]+">
+    <span *ngIf="name.touched && !name.valid">Field required</span>
+  </p>
+
+  <p>
+    <label for="job">Job</label>&nbsp;
+    <input type="text" name="job" #job="ngModel" [(ngModel)]="new_user.job" required pattern="[a-zA-Z]+">
+    <span *ngIf="job.touched && !job.valid">Field required</span>
+  </p>
+
+  <input type="Submit" value="Send user" [disabled]="!newUser.form.valid">
+</form>
+
+<div *ngIf="user_saved">
+  <p>Name: {{user_saved.name}} &nbsp; Job: {{user_saved.job}}</p>
 </div>
